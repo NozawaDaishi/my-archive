@@ -5,14 +5,26 @@ import {
   RouteRecordRaw,
 } from 'vue-router'
 import AppIndex from '../pages/AppIndex.vue'
+import Books from '../pages/books/index.vue'
 import Home from '../pages/home/index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '',
+    path: '/',
     name: 'AppIndex',
     component: AppIndex,
-    children: [{ path: '/', name: 'Home', component: Home }],
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: Home,
+      },
+      {
+        path: '/books',
+        name: 'Books',
+        component: Books,
+      },
+    ],
   },
   // 他のルートをここに追加
 ]
