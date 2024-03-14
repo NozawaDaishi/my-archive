@@ -1,16 +1,23 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+import {
+  createRouter,
+  createWebHistory,
+  Router,
+  RouteRecordRaw,
+} from 'vue-router'
+import AppIndex from '../pages/AppIndex.vue'
+import Home from '../pages/home/index.vue'
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
-    path: '/',
-    name: 'HelloWorld',
-    component: HelloWorld,
+    path: '',
+    name: 'AppIndex',
+    component: AppIndex,
+    children: [{ path: '/', name: 'Home', component: Home }],
   },
   // 他のルートをここに追加
 ]
 
-const router = createRouter({
+const router: Router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
