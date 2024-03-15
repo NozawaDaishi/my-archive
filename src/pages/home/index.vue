@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Nozawa Daishi</div>
+  <div>Archives of Daishi Nozawa</div>
 </template>
