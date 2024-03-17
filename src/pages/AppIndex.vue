@@ -116,7 +116,7 @@ header {
         border-bottom: 1px solid #35a2a9;
       }
       &.active {
-        background-color: #35a2a9;
+        background-color: #0e7995;
         color: #fbf1e8;
         border-bottom: 1px solid #35a2a9;
       }
