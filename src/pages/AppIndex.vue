@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { computed } from 'vue'
 import { useNavigation } from '@/composables/useNavigation'
 import { useRoute } from 'vue-router'
 
@@ -33,39 +32,27 @@ const isActive = (path: string) => {
         <a
           :class="[
             classes.link,
-            isActive('/books')
-              ? classes.active
-              : '',
+            isActive('/books') ? classes.active : '',
           ]"
-          @click.stop.prevent="
-            navigateTo('books')
-          "
+          @click.stop.prevent="navigateTo('books')"
         >
           Books
         </a>
         <a
           :class="[
             classes.link,
-            isActive('/study')
-              ? classes.active
-              : '',
+            isActive('/study') ? classes.active : '',
           ]"
-          @click.stop.prevent="
-            navigateTo('study')
-          "
+          @click.stop.prevent="navigateTo('study')"
         >
           Study
         </a>
         <a
           :class="[
             classes.link,
-            isActive('/resume')
-              ? classes.active
-              : '',
+            isActive('/resume') ? classes.active : '',
           ]"
-          @click.stop.prevent="
-            navigateTo('resume')
-          "
+          @click.stop.prevent="navigateTo('resume')"
         >
           履歴書
         </a>
@@ -109,16 +96,16 @@ header {
       overflow: hidden;
       text-decoration: none;
       transition: all 0.3s;
-      border-bottom: 1px solid #002747;
+      border-bottom: 1.5px solid #002747;
       &:hover {
         background-color: #35a2a9;
         color: #fbf1e8;
-        border-bottom: 1px solid #35a2a9;
+        border-bottom: 1.5px solid #35a2a9;
       }
       &.active {
         background-color: #0e7995;
         color: #fbf1e8;
-        border-bottom: 1px solid #35a2a9;
+        border-bottom: 1.5px solid #0e7995;
       }
     }
   }

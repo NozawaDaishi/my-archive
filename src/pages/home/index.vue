@@ -1,109 +1,133 @@
-<script setup lang="ts">
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-const navigateToBooks = (): void => {
-  router.push('books')
-}
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <a
-    style="--clr: #7808d0"
-    :class="classes.button"
-    @click.stop.prevent="navigateToBooks"
-  >
-    <span :class="classes.button__icon_wrapper">
-      <svg
-        width="10"
-        :class="classes.button__icon_svg"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 14 15"
-      >
-        <path
-          fill="currentColor"
-          d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-        ></path>
-      </svg>
-
-      <svg
-        :class="[
-          classes.button__icon_svg,
-          classes.button__icon_svg__copy,
-        ]"
-        xmlns="http://www.w3.org/2000/svg"
-        width="10"
-        fill="none"
-        viewBox="0 0 14 15"
-      >
-        <path
-          fill="currentColor"
-          d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-        ></path>
-      </svg>
-    </span>
-    Go to Books
-  </a>
+  <div :class="classes.self_introduction">
+    <div :class="classes.self_introduction_wrapper">
+      <h2 :class="classes.headline">基本情報</h2>
+      <table :class="classes.table">
+        <tbody>
+          <tr>
+            <th>氏名</th>
+            <td>野澤大士</td>
+          </tr>
+          <tr>
+            <th>年齢</th>
+            <td>26歳</td>
+          </tr>
+          <tr>
+            <th>生年月日</th>
+            <td>1998年1月27日</td>
+          </tr>
+          <tr>
+            <th>居住地</th>
+            <td>神奈川</td>
+          </tr>
+        </tbody>
+      </table>
+      <div :class="classes.h_space"></div>
+      <h2 :class="classes.headline">資格</h2>
+      <ul :class="classes.list">
+        <li><span>情報セキュリティマネジメント</span></li>
+        <li><span>基本情報技術者</span></li>
+        <li><span>応用情報技術者試験</span></li>
+        <li><span>情報処理安全確保支援士</span></li>
+      </ul>
+    </div>
+  </div>
+  <div :class="classes.calendar">
+    <div :class="classes.calendar_wrapper"></div>
+  </div>
+  <div :class="classes.task">
+    <div :class="classes.task_wrapper"></div>
+  </div>
+  <div :class="classes.qualification">
+    <div :class="classes.qualification_wrapper"></div>
+  </div>
 </template>
 
 <style lang="scss" module="classes">
-.title {
-  font-size: 24px;
+.self_introduction {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &_wrapper {
+    width: 80%;
+    margin: 50px 0;
+    .headline {
+      color: #002747;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .table {
+      border-collapse: collapse;
+      width: 100%;
+      color: #002747;
+      & th {
+        padding: 1em 0;
+      }
+      & td {
+        padding: 1em 1.5em;
+      }
+      & th {
+        color: #0e7995;
+        font-weight: bold;
+        text-align: left;
+        width: 10%;
+        position: relative;
+        &::after {
+          content: '';
+          background-color: #c1c7c6;
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 60%;
+        }
+      }
+    }
+    .h_space {
+      height: 50px;
+    }
+    .list {
+      border: 2px solid #0e7995;
+      border-radius: 10px;
+      list-style-type: disc;
+      margin: 20px 0;
+      padding: 0 20px;
+      li {
+        color: #0e7995;
+        margin: 30px;
+        & span {
+          color: #002747;
+        }
+      }
+    }
+  }
 }
-
-.button {
-  line-height: 1;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--clr);
-  color: #fff;
-  border-radius: 10rem;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  padding-left: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: background-color 0.3s;
+.calendar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &_wrapper {
+    width: 80%;
+    height: 20vh;
+    border: 1px solid #002747;
+    background-color: white;
+    margin: 50px 0;
+  }
 }
-
-.button__icon_wrapper {
-  flex-shrink: 0;
-  width: 25px;
-  height: 25px;
-  position: relative;
-  color: var(--clr);
-  background-color: #fff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.button:hover {
-  background-color: #000;
-}
-
-.button:hover .button__icon_wrapper {
-  color: #000;
-}
-
-.button__icon_svg__copy {
-  position: absolute;
-  transform: translate(-150%, 150%);
-}
-
-.button:hover .button__icon_svg:first-child {
-  transition: transform 0.3s ease-in-out;
-  transform: translate(150%, -150%);
-}
-
-.button:hover .button__icon_svg__copy {
-  transition: transform 0.3s ease-in-out 0.1s;
-  transform: translate(0);
+.task {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &_wrapper {
+    width: 80%;
+    height: 20vh;
+    border: 1px solid #002747;
+    background-color: white;
+    margin: 50px 0;
+  }
 }
 </style>
