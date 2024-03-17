@@ -45,7 +45,7 @@ rules:
       allowConciseArrowFunctionExpressionsStartingWithVoid: false
   max-len:
     - error
-    - code: 120
+    - code: 150
       ignoreStrings: true
       ignorePattern: class="[^"]*"
   sort-imports:
@@ -59,4 +59,10 @@ rules:
         - multiple
         - single
       allowSeparatedGroups: true
+  vue/max-attributes-per-line:
+    - error
+    - singleline: 1
+      multiline:
+        max: 1
+        allowFirstLine: false
   'vue/multi-word-component-names': 'off'
