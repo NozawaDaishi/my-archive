@@ -63,18 +63,18 @@
       border-collapse: collapse;
       width: 100%;
       color: #002747;
-      & th {
-        padding: 1em 0;
-      }
       & td {
         padding: 1em 1.5em;
+        min-width: 10em;
       }
       & th {
+        padding: 1em 0;
         color: #0e7995;
         font-weight: bold;
         text-align: left;
         width: 10%;
         position: relative;
+        min-width: 6em;
         &::after {
           content: '';
           background-color: #c1c7c6;
