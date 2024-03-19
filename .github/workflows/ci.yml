@@ -18,19 +18,16 @@ jobs:
           node-version: '20.x'
 
       - name: Install dependencies
-        working-directory: ./system-staff-shift
         run: npm ci
         env:
           TZ: 'Asia/Tokyo'
 
       - name: Build the project (development)
-        working-directory: ./system-staff-shift
         run: npm run build
         env:
           TZ: 'Asia/Tokyo'
 
       - name: Lint the code
-        working-directory: ./system-staff-shift
         run: npm run lint
         env:
           TZ: 'Asia/Tokyo'
