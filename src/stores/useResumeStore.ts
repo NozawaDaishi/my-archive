@@ -1,6 +1,6 @@
+import { defineStore } from 'pinia'
 import { ResumeData } from '@/types/resume'
 import { resumeService } from '@/services'
-import { defineStore } from 'pinia'
 
 interface State {
   resumeData: ResumeData | null

@@ -5,10 +5,10 @@ import { useRoute } from 'vue-router'
 const { navigateTo } = useNavigation()
 const route = useRoute()
 
-const isActive = (path: string) => {
+const isActive = (path: string): boolean => {
   return route.path === path
 }
-import { ref, onMounted, nextTick } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 
 const headerRef = ref<HTMLElement | null>(null)
 const headerHeight = ref(0)
@@ -25,54 +25,36 @@ onMounted(() => {
 <template>
   <div :class="classes.wrapper">
     <header ref="headerRef">
-      <h1
-        :class="classes.title"
-        @click.stop.prevent="navigateTo('/')"
-      >
+      <h1 :class="classes.title" @click.stop.prevent="navigateTo('/')">
         Archives of Daishi Nozawa
       </h1>
       <nav>
         <a
-          :class="[
-            classes.link,
-            isActive('/') ? classes.active : '',
-          ]"
+          :class="[classes.link, isActive('/') ? classes.active : '']"
           @click.stop.prevent="navigateTo('/')"
         >
           Home
         </a>
         <a
-          :class="[
-            classes.link,
-            isActive('/books') ? classes.active : '',
-          ]"
+          :class="[classes.link, isActive('/books') ? classes.active : '']"
           @click.stop.prevent="navigateTo('books')"
         >
           Books
         </a>
         <a
-          :class="[
-            classes.link,
-            isActive('/study') ? classes.active : '',
-          ]"
+          :class="[classes.link, isActive('/study') ? classes.active : '']"
           @click.stop.prevent="navigateTo('study')"
         >
           Study
         </a>
         <a
-          :class="[
-            classes.link,
-            isActive('/resume') ? classes.active : '',
-          ]"
+          :class="[classes.link, isActive('/resume') ? classes.active : '']"
           @click.stop.prevent="navigateTo('resume')"
         >
           履歴書
         </a>
         <a
-          :class="[
-            classes.link,
-            isActive('/cv') ? classes.active : '',
-          ]"
+          :class="[classes.link, isActive('/cv') ? classes.active : '']"
           @click.stop.prevent="navigateTo('cv')"
         >
           職務経歴書

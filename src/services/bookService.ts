@@ -5,9 +5,7 @@ type FuncType = {
 }
 
 export default function useBookService(): FuncType {
-  const fetchBooks = async (): Promise<
-    Book[]
-  > => {
+  const fetchBooks = async (): Promise<Book[]> => {
     try {
       const response = [
         {

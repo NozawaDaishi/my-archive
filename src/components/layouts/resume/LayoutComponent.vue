@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {
-  DATE_FORMAT_YEAR_MONTH_DAY,
   DATE_FORMAT_YEAR_MONTH,
+  DATE_FORMAT_YEAR_MONTH_DAY,
 } from '@/constants/dateFormats'
 import { formatDate } from '@/utils/formatDate'
 import { onMounted } from 'vue'
@@ -22,9 +22,7 @@ onMounted(async () => {
     <!-- 個人情報 -->
     <h2>個人情報</h2>
     <p>氏名: {{ resumeData.selfInformation.fullName }}</p>
-    <p>
-      ふりがな: {{ resumeData.selfInformation.furigana }}
-    </p>
+    <p>ふりがな: {{ resumeData.selfInformation.furigana }}</p>
     <p>
       生年月日:
       {{
@@ -34,12 +32,8 @@ onMounted(async () => {
         )
       }}
     </p>
-    <p>
-      メールアドレス: {{ resumeData.selfInformation.email }}
-    </p>
-    <p>
-      電話番号: {{ resumeData.selfInformation.phoneNumber }}
-    </p>
+    <p>メールアドレス: {{ resumeData.selfInformation.email }}</p>
+    <p>電話番号: {{ resumeData.selfInformation.phoneNumber }}</p>
 
     <!-- 学歴 -->
     <h2>学歴</h2>
@@ -61,12 +55,7 @@ onMounted(async () => {
         v-for="experience in resumeData.workExperience"
         :key="experience.date.toString()"
       >
-        {{
-          formatDate(
-            experience.date,
-            DATE_FORMAT_YEAR_MONTH
-          )
-        }}
+        {{ formatDate(experience.date, DATE_FORMAT_YEAR_MONTH) }}
         - {{ experience.content }} ({{ experience.status }})
       </li>
     </ul>
@@ -78,15 +67,8 @@ onMounted(async () => {
         v-for="qualification in resumeData.qualifications"
         :key="qualification.date.toString()"
       >
-        {{
-          formatDate(
-            qualification.date,
-            DATE_FORMAT_YEAR_MONTH
-          )
-        }}
-        - {{ qualification.content }} ({{
-          qualification.status
-        }})
+        {{ formatDate(qualification.date, DATE_FORMAT_YEAR_MONTH) }}
+        - {{ qualification.content }} ({{ qualification.status }})
       </li>
     </ul>
   </div>
