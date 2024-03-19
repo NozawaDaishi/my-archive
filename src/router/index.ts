@@ -6,10 +6,10 @@ import {
 } from 'vue-router'
 import AppIndex from '@/pages/AppIndex.vue'
 import Books from '@/pages/books/Index.vue'
-import Cv from '@/pages/cv/Index.vue'
 import Home from '@/pages/home/Index.vue'
 import Resume from '@/pages/resume/Index.vue'
 import Study from '@/pages/study/Index.vue'
+import WorkHistory from '@/pages/work-history/Index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -28,9 +28,9 @@ const routes: RouteRecordRaw[] = [
         component: Books,
       },
       {
-        path: '/cv',
-        name: 'Cv',
-        component: Cv,
+        path: '/work-history',
+        name: 'WorkHistory',
+        component: WorkHistory,
       },
       {
         path: '/resume',
