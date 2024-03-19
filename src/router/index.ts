@@ -4,12 +4,12 @@ import {
   Router,
   RouteRecordRaw,
 } from 'vue-router'
-import AppIndex from '../pages/AppIndex.vue'
-import Books from '../pages/books/index.vue'
-import Cv from '../pages/cv/index.vue'
-import Home from '../pages/home/index.vue'
-import Resume from '../pages/resume/index.vue'
-import Study from '../pages/study/index.vue'
+import AppIndex from '@/pages/AppIndex.vue'
+import Books from '@/pages/books/Index.vue'
+import Cv from '@/pages/cv/Index.vue'
+import Home from '@/pages/home/Index.vue'
+import Resume from '@/pages/resume/Index.vue'
+import Study from '@/pages/study/Index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -48,9 +48,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router: Router = createRouter({
-  history: createWebHistory(
-    import.meta.env.BASE_URL
-  ),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
 

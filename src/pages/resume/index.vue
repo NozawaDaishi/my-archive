@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Resume from '@/components/pages/resume/PageComponent.vue'
+</script>
 
-<template></template>
-
-<style lang="scss" module="classes"></style>
+<template>
+  <Resume />
+</template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Books from '@/components/pages/Books/pageComponent.vue'
+import Books from '@/components/pages/books/PageComponent.vue'
 </script>
 
 <template>
