@@ -54,8 +54,11 @@ onMounted(() => {
           履歴書
         </a>
         <a
-          :class="[classes.link, isActive('/cv') ? classes.active : '']"
-          @click.stop.prevent="navigateTo('cv')"
+          :class="[
+            classes.link,
+            isActive('/work-history') ? classes.active : '',
+          ]"
+          @click.stop.prevent="navigateTo('work-history')"
         >
           職務経歴書
         </a>
