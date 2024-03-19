@@ -7,6 +7,7 @@ export const resumeMockData: ResumeData = {
     birthDate: new Date('1998-01-27'),
     email: 'nozanoza127@gmail.com',
     phoneNumber: '070-4231-4149',
+    address: '神奈川',
   },
   academicBackground: [
     {

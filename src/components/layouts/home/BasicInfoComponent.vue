@@ -48,7 +48,7 @@ onMounted(async () => {
           </tr>
           <tr>
             <th>居住地</th>
-            <td>神奈川</td>
+            <td>{{ resumeData.selfInformation.address }}</td>
           </tr>
         </tbody>
       </table>

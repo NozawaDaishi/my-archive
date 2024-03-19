@@ -4,6 +4,7 @@ export type SelfInformation = {
   birthDate: Date
   email: string
   phoneNumber: string
+  address: string
 }
 
 export type AcademicBackground = {
