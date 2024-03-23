@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import BasicInfoComponent from '@/components/layouts/home/BasicInfoComponent.vue'
+import CalendarComponent from '@/components/layouts/home/Calendar/CalendarComponent.vue'
 </script>
 
 <template>
   <BasicInfoComponent />
-  <div :class="classes.calendar">
-    <div :class="classes.calendar_wrapper"></div>
-  </div>
+  <CalendarComponent />
   <div :class="classes.task">
     <div :class="classes.task_wrapper"></div>
   </div>
