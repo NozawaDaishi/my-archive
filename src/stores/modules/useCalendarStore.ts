@@ -24,10 +24,7 @@ const useCalendarStore = defineStore('useCalendar', {
     // 祝日情報の取得
     async getHolidays(): Promise<Holidays> {
       this.$patch({
-        // holidayMap: await Services.calendar.fetchHolidays(),
-        holidayMap: {
-          '2024-03-29': '元日',
-        },
+        holidayMap: await Services.calendar.fetchHolidays(),
       })
       return this.holidayMap
     },
