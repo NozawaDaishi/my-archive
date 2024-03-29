@@ -43,6 +43,7 @@ rules:
       allowHigherOrderFunctions: true
       allowDirectConstAssertionInArrowFunctions: true
       allowConciseArrowFunctionExpressionsStartingWithVoid: false
+  '@typescript-eslint/no-namespace': off
   max-len:
     - error
     - code: 120

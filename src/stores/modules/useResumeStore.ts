@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ResumeData } from '@/types/resume'
-import { resumeService } from '@/services'
+import { Services } from '@/services'
 
 interface State {
   resumeData: ResumeData | null
@@ -13,7 +13,7 @@ const useResumeStore = defineStore('useResumeStore', {
   actions: {
     async getResumeData() {
       this.$patch({
-        resumeData: await resumeService.fetchResumeData(),
+        resumeData: await Services.resume.fetchResumeData(),
       })
     },
   },

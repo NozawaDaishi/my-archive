@@ -1,5 +1,5 @@
+import { mockResumeData } from '@/mocks/resumeData'
 import { ResumeData } from '@/types/resume'
-import { resumeMockData } from '@/data/resumeData'
 
 type FuncType = {
   fetchResumeData: () => Promise<ResumeData>
@@ -8,7 +8,7 @@ type FuncType = {
 export default function useResumeService(): FuncType {
   const fetchResumeData = async (): Promise<ResumeData> => {
     try {
-      return resumeMockData
+      return mockResumeData
     } catch (error) {
       throw new Error('エラーが発生しました。')
     }

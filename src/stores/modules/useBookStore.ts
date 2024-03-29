@@ -1,6 +1,6 @@
 import { Book } from '@/types/book'
-import { bookService } from '@/services'
 import { defineStore } from 'pinia'
+import { Services } from '@/services'
 
 interface State {
   books: Book[]
@@ -13,7 +13,7 @@ const useBookStore = defineStore('useBookStore', {
   actions: {
     async getBooks() {
       this.$patch({
-        books: await bookService.fetchBooks(),
+        books: await Services.book.fetchBooks(),
       })
     },
   },

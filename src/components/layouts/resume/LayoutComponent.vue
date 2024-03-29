@@ -5,10 +5,10 @@ import {
 } from '@/constants/dateFormats'
 import { formatDate } from '@/utils/formatDate'
 import { onMounted } from 'vue'
+import { Stores } from '@/stores'
 import { storeToRefs } from 'pinia'
-import useResumeStore from '@/stores/useResumeStore'
 
-const resumeStore = useResumeStore()
+const resumeStore = Stores.resume()
 const { resumeData } = storeToRefs(resumeStore)
 const { getResumeData } = resumeStore
 
@@ -74,3 +74,4 @@ onMounted(async () => {
   </div>
   <div v-else>データを取得中...</div>
 </template>
+@/stores/modules/useResumeStore

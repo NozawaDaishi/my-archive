@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { Stores } from '@/stores'
 import { storeToRefs } from 'pinia'
-import useBookStore from '@/stores/useBookStore'
 
-const bookStore = useBookStore()
+const bookStore = Stores.book()
 const { books } = storeToRefs(bookStore)
 const { getBooks } = bookStore
 
@@ -16,3 +16,4 @@ getBooks()
     </li>
   </ul>
 </template>
+@/stores/modules/useBookStore

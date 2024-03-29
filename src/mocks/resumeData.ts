@@ -1,6 +1,6 @@
 import { ResumeData } from '@/types/resume'
 
-export const resumeMockData: ResumeData = {
+export const mockResumeData: ResumeData = {
   selfInformation: {
     fullName: '野澤 大士',
     furigana: 'のざわ だいし',

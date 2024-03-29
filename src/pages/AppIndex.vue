@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { nextTick, onMounted } from 'vue'
 import { navLinks } from '@/constants/navigationPath'
+import { Stores } from '@/stores'
 import { storeToRefs } from 'pinia'
-import useHeaderStore from '@/stores/useHeaderStore'
 import { useNavigation } from '@/composables/useNavigation'
 import { useRoute } from 'vue-router'
 
-const headerStore = useHeaderStore()
+const headerStore = Stores.header()
 const { headerRef, headerHeight } = storeToRefs(headerStore)
 const { navigateTo } = useNavigation()
 const route = useRoute()
@@ -154,3 +154,4 @@ onMounted(() => {
   }
 }
 </style>
+@/stores/modules/useHeaderStore

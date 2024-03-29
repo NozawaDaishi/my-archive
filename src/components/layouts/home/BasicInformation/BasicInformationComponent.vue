@@ -3,12 +3,12 @@ import { computed, onMounted } from 'vue'
 import { calculateAge } from '@/utils/calculateAge'
 import { DATE_FORMAT_YEAR_MONTH_DAY } from '@/constants/dateFormats'
 import { formatDate } from '@/utils/formatDate'
+import { Stores } from '@/stores'
 import { storeToRefs } from 'pinia'
 import { useNavigation } from '@/composables/useNavigation'
-import useResumeStore from '@/stores/useResumeStore'
 
 const { navigateTo } = useNavigation()
-const resumeStore = useResumeStore()
+const resumeStore = Stores.resume()
 const { resumeData } = storeToRefs(resumeStore)
 const { getResumeData } = resumeStore
 
@@ -155,3 +155,4 @@ onMounted(async () => {
   }
 }
 </style>
+@/stores/modules/useResumeStore
