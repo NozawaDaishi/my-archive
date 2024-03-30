@@ -6,15 +6,19 @@ import QualificationComponent from '@/components/parts/Qualification/Qualificati
 </script>
 
 <template>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md">
         <BasicInformationComponent />
-        <div class="mt-5"><QualificationComponent /></div>
       </div>
+      <div class="col-md">
+        <QualificationComponent />
+      </div>
+    </div>
+    <div class="row mt-5 mb-5">
       <div class="col">
         <CalendarComponent />
-        <div class="mt-5 mb-5"><FocusedDateComponent /></div>
+        <div class="mt-5"><FocusedDateComponent /></div>
       </div>
     </div>
   </div>

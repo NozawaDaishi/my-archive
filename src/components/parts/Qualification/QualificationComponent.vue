@@ -63,6 +63,7 @@ onMounted(async () => {
     }
     .description {
       text-align: right;
+      white-space: nowrap;
       font-size: 14px;
       color: #777;
       .link {

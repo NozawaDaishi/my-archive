@@ -24,33 +24,40 @@ onMounted(async () => {
 <template>
   <div v-if="resumeData" :class="classes.basic_info">
     <h2 :class="classes.headline">基本情報</h2>
-    <table :class="classes.table">
-      <tbody>
-        <tr>
-          <th>氏名</th>
-          <td>{{ resumeData.selfInformation.fullName }}</td>
-        </tr>
-        <tr>
-          <th>年齢</th>
-          <td>{{ age }}歳</td>
-        </tr>
-        <tr>
-          <th>生年月日</th>
-          <td>
-            {{
-              formatDate(
-                resumeData.selfInformation.birthDate,
-                DATE_FORMAT_YEAR_MONTH_DAY
-              )
-            }}
-          </td>
-        </tr>
-        <tr>
-          <th>居住地</th>
-          <td>{{ resumeData.selfInformation.address }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row align-items-center">
+      <div class="col">
+        <table :class="classes.table">
+          <tbody>
+            <tr>
+              <th>氏名</th>
+              <td>{{ resumeData.selfInformation.fullName }}</td>
+            </tr>
+            <tr>
+              <th>年齢</th>
+              <td>{{ age }}歳</td>
+            </tr>
+            <tr>
+              <th>生年月日</th>
+              <td>
+                {{
+                  formatDate(
+                    resumeData.selfInformation.birthDate,
+                    DATE_FORMAT_YEAR_MONTH_DAY
+                  )
+                }}
+              </td>
+            </tr>
+            <tr>
+              <th>居住地</th>
+              <td>{{ resumeData.selfInformation.address }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xl p-3">
+        <img class="img-fluid" src="/profile_img.jpg" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -63,9 +70,13 @@ onMounted(async () => {
     font-weight: bold;
     margin-bottom: 10px;
   }
+  // img {
+  //   width: 300px;
+  // }
   .table {
+    display: flex;
+    align-items: center;
     border-collapse: collapse;
-    width: 100%;
     color: #002747;
     & td {
       padding: 1em 1.5em;
