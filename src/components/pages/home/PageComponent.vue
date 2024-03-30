@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CalendarComponent from '@/components/layouts/home/Calendar/CalendarComponent.vue'
+import LayoutComponent from '@/components/layouts/home/Layout/LayoutComponent.vue'
 </script>
 
 <template>
-  <CalendarComponent />
+  <LayoutComponent />
 </template>
 
 <style lang="scss" module="classes"></style>
