@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useCalendarComponent from '@/components/layouts/home/Calendar/useCalendarComponent'
+import useCalendarComponent from '@/components/layouts/home/Layout/useCalendarComponent'
 
 const {
   blankDays,
