@@ -17,7 +17,7 @@ onMounted(async () => {
 <template>
   <div :class="classes.qualificationComponent">
     <div v-if="resumeData" :class="classes.qualification">
-      <h2 :class="classes.headline">資格</h2>
+      <h2 :class="classes.headline">保有資格</h2>
       <ul :class="classes.list">
         <li
           v-for="qualification in resumeData.qualifications"
