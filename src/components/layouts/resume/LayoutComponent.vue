@@ -74,4 +74,3 @@ onMounted(async () => {
   </div>
   <div v-else>データを取得中...</div>
 </template>
-@/stores/modules/useResumeStore

@@ -103,4 +103,3 @@ const { focusedDate, focusedWork, weekdays } = useCalendarComponent()
   }
 }
 </style>
-@/components/layouts/home/Layout/useCalendarComponent

@@ -30,7 +30,7 @@ onMounted(() => {
       <h1 :class="classes.title" @click.stop.prevent="navigateTo('/')">
         Archives of Daishi Nozawa
       </h1>
-      <nav>
+      <nav :class="classes.nav">
         <a
           v-for="(link, index) in navLinks"
           :key="index"
@@ -51,6 +51,32 @@ onMounted(() => {
     >
       <router-view></router-view>
     </div>
+    <footer>
+      <nav :class="classes.nav">
+        <a
+          v-for="(link, index) in navLinks"
+          :key="index"
+          :class="[classes.link, isActive(link.path) ? classes.active : '']"
+          @click.stop.prevent="navigateTo(link.path)"
+        >
+          <span v-if="link.name === navLinks[0].name"
+            ><img src="@/assets/home.svg"
+          /></span>
+          <span v-if="link.name === navLinks[1].name"
+            ><img src="@/assets/book.svg"
+          /></span>
+          <span v-if="link.name === navLinks[2].name"
+            ><img src="@/assets/hat.svg"
+          /></span>
+          <span v-if="link.name === navLinks[3].name"
+            ><img src="@/assets/resume.svg"
+          /></span>
+          <span v-if="link.name === navLinks[4].name"
+            ><img src="@/assets/cv.svg"
+          /></span>
+        </a>
+      </nav>
+    </footer>
   </div>
 </template>
 
@@ -68,7 +94,7 @@ onMounted(() => {
       padding: 50px 0 30px 0;
       cursor: pointer;
     }
-    nav {
+    & .nav {
       margin: 0 auto 30px;
       position: relative;
       width: 500px;
@@ -153,5 +179,55 @@ onMounted(() => {
     }
   }
 }
+@media (max-width: 519px) {
+  .wrapper {
+    header {
+      & .nav {
+        display: none;
+      }
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      background-color: #34495e;
+      & .nav {
+        border-radius: 8px;
+      }
+      a {
+        line-height: 50px;
+        width: 20vw;
+        display: inline-block;
+        z-index: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fbf1e8;
+        cursor: pointer;
+        &:nth-child(1).active {
+          background-color: #1abc9c;
+          border-radius: 8px;
+        }
+        &:nth-child(2).active {
+          background-color: #e74c3c;
+          border-radius: 8px;
+        }
+        &:nth-child(3).active {
+          background-color: #3498db;
+          border-radius: 8px;
+        }
+        &:nth-child(4).active {
+          background-color: #9b59b6;
+          border-radius: 8px;
+        }
+        &:nth-child(5).active {
+          background-color: #e67e22;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
 </style>
-@/stores/modules/useHeaderStore

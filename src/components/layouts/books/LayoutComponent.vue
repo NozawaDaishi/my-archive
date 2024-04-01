@@ -16,4 +16,3 @@ getBooks()
     </li>
   </ul>
 </template>
-@/stores/modules/useBookStore

@@ -18,7 +18,7 @@ import QualificationComponent from '@/components/parts/Qualification/Qualificati
     <div class="row mt-5 mb-5">
       <div class="col">
         <CalendarComponent />
-        <div class="mt-5"><FocusedDateComponent /></div>
+        <div class="mt-5 mb-5"><FocusedDateComponent /></div>
       </div>
     </div>
   </div>
