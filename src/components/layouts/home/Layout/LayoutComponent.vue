@@ -9,22 +9,18 @@ import QualificationComponent from '@/components/parts/Qualification/Qualificati
 <template>
   <div class="container">
     <div class="row mt-5">
-      <div class="col-md mb-5">
-        <div class="row">
-          <BasicInformationComponent />
-        </div>
+      <div class="col-xl">
+        <BasicInformationComponent />
       </div>
-      <div class="col-md">
-        <div class="mb-5">
-          <CurrentGoalsComponent />
-        </div>
-        <div>
-          <QualificationComponent />
-        </div>
+      <div class="col-xl">
+        <CurrentGoalsComponent />
       </div>
     </div>
+    <div class="row mt-5">
+      <QualificationComponent />
+    </div>
     <div class="row mt-5 mb-5">
-      <div class="col">
+      <div class="col mb-5">
         <CalendarComponent />
         <div class="mt-5 mb-5"><FocusedDateComponent /></div>
       </div>

@@ -87,7 +87,7 @@ onMounted(() => {
     background-color: #2c3e50;
     padding: 10px;
     .title {
-      color: #fbf1e8;
+      color: white;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
@@ -122,7 +122,7 @@ onMounted(() => {
       text-decoration: none;
       text-transform: uppercase;
       text-align: center;
-      color: #fbf1e8;
+      color: white;
       cursor: pointer;
       &:nth-child(1):hover ~ .animation {
         width: 100px;
@@ -172,7 +172,7 @@ onMounted(() => {
     }
   }
   .body {
-    background-color: #fbf1e8;
+    background-color: white;
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
@@ -204,7 +204,7 @@ onMounted(() => {
         text-decoration: none;
         text-transform: uppercase;
         text-align: center;
-        color: #fbf1e8;
+        color: white;
         cursor: pointer;
         &:nth-child(1).active {
           background-color: #1abc9c;

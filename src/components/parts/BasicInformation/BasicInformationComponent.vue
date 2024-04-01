@@ -54,7 +54,7 @@ onMounted(async () => {
           </tbody>
         </table>
       </div>
-      <div class="col-xl p-3">
+      <div class="col-md p-3">
         <img class="img-fluid" src="/profile_img.jpg" />
       </div>
     </div>

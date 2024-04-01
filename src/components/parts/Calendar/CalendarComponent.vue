@@ -176,7 +176,7 @@ const {
         text-align: center;
         border-radius: 4px;
         font-weight: bold;
-        color: #fbf1e8;
+        color: white;
         background-color: rgba(229, 157, 44, 0.6);
         &:disabled {
           background-color: rgba(229, 157, 44, 0.3);

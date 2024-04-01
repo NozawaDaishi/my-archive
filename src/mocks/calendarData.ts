@@ -58,6 +58,14 @@ const mockWorkLog: WorkLog[] = [
         time: '1時間00分',
         message: '',
       },
+      {
+        name: '個人開発',
+        content: 'My-Archivesの実装',
+        start_time: '23:30',
+        end_time: '24:00',
+        time: '0時間30分',
+        message: '',
+      },
     ],
   },
   {
