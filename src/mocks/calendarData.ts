@@ -71,14 +71,22 @@ const mockWorkLog: WorkLog[] = [
   {
     work_day: '2024-04-02',
     works: [
-      // {
-      //   name: 'NWスペシャリスト',
-      //   content: 'ネスペR5 10ページ',
-      //   start_time: '18:00',
-      //   end_time: '19:30',
-      //   time: '1時間30分',
-      //   message: '',
-      // },
+      {
+        name: '個人開発',
+        content: 'My-Archivesの実装',
+        start_time: '18:30',
+        end_time: '19:30',
+        time: '1時間00分',
+        message: '',
+      },
+      {
+        name: 'NWスペシャリスト',
+        content: 'ネスペR5 午後1問2',
+        start_time: '15:35',
+        end_time: '18:50',
+        time: '3時間15分',
+        message: '',
+      },
     ],
   },
 ]
