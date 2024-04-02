@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BooksLayout from '@/components/layouts/books/LayoutComponent.vue'
+import LayoutComponent from '@/components/layouts/books/Layout/LayoutComponent.vue'
 </script>
 
 <template>
-  <BooksLayout />
+  <LayoutComponent />
 </template>

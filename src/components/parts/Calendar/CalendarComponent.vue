@@ -27,7 +27,7 @@ const {
 <template>
   <div :class="classes.calendarComponent">
     <div :class="classes.header">
-      <div :class="classes.title">作業ログ</div>
+      <div :class="classes.headline">作業ログ</div>
       <div :class="classes.label">
         稼働時間｜<span :class="classes.data">{{ totalWorkTimeForMonth }}</span>
       </div>
@@ -118,7 +118,7 @@ const {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .title {
+    .headline {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 20px;
       font-weight: bold;

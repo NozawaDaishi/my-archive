@@ -1,7 +1,7 @@
 import { Holidays, WorkLog } from '@/types/calendar'
 import axios from 'axios'
 import { calculateTotalWorkTimeForMonth } from '@/utils/calculateWorkTime'
-import mockWorkLog from '@/mocks/calendarData'
+import mockWorkLog from '@/mocks/workLog'
 
 type FuncType = {
   fetchHolidays: () => Promise<Holidays>
