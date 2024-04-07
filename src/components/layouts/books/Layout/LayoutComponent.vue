@@ -13,6 +13,7 @@ const { sortedBooks } = useLayoutComponent()
         <tr>
           <th scope="col">書籍名</th>
           <th class="text-center text-nowrap" scope="col">ステータス</th>
+          <th class="text-center text-nowrap" scope="col">読書期間</th>
           <th class="text-center text-nowrap" scope="col">読んだ回数</th>
         </tr>
       </thead>
@@ -60,6 +61,11 @@ const { sortedBooks } = useLayoutComponent()
               :class="[classes.label, classes.Referencing]"
               >{{ book.status }}</span
             >
+          </td>
+          <td class="text-center text-nowrap align-middle">
+            <span v-for="period in book.readingPeriod" :key="period">{{
+              period
+            }}</span>
           </td>
           <td class="text-center align-middle">{{ book.countRead }}</td>
         </tr>

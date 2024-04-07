@@ -2,6 +2,7 @@ export interface Book {
   ISBN: string
   name: string
   countRead: number | null
+  readingPeriod: string[] | null
   status: Status
 }
 
