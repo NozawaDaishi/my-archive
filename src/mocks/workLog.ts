@@ -241,6 +241,32 @@ const mockWorkLog: WorkLog[] = [
       },
     ],
   },
+  {
+    work_day: '2024-04-19',
+    works: [
+      {
+        name: 'NWスペシャリスト',
+        content: 'ネスペR3 午後1問3,1',
+        start_time: '13:00',
+        end_time: '17:30',
+        time: '4時間30分',
+        message: '',
+      },
+    ],
+  },
+  {
+    work_day: '2024-04-20',
+    works: [
+      {
+        name: 'NWスペシャリスト',
+        content: 'ネスペR3 午後1問1,2',
+        start_time: '12:00',
+        end_time: '14:42',
+        time: '2時間42分',
+        message: '',
+      },
+    ],
+  },
 ]
 
 export default mockWorkLog
