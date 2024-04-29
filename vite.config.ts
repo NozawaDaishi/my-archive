@@ -22,4 +22,12 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    fs: {
+      strict: false,
+    },
+  },
+  build: {
+    outDir: 'docs', // 出力ディレクトリを docs に変更
+  },
 })
