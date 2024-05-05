@@ -6,7 +6,6 @@
   "scripts": {
     "serve:local": "vite --mode localhost",
     "build": "vue-tsc && vite build",
-    "deploy": "npm run build && node ./scripts/gh-pages-deploy.ts",
     "preview": "vite preview",
     "lint": "eslint --fix \"src/**/*.{ts,vue}\"",
     "format": "prettier -w \"src/**/*.{ts,vue}\""
@@ -32,7 +31,6 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.23.0",
-    "gh-pages": "^6.1.1",
     "prettier": "^3.2.5",
     "sass": "^1.72.0",
     "typescript": "^5.3.3",
