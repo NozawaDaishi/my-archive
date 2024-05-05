@@ -1,5 +1,0 @@
-export const DATE_FORMAT_YEAR_MONTH_DAY = 'yyyy年MM月dd日'
-export const DATE_FORMAT_YEAR_MONTH = 'yyyy年MM月'
-export const DATE_FORMAT_YEAR = 'yyyy年'
-export const DATE_FORMAT_MONTH = 'MM月'
-export const DATE_FORMAT_DAY = 'dd日'
