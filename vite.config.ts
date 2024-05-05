@@ -29,5 +29,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'docs', // 出力ディレクトリを docs に変更
+    emptyOutDir: true, // これを追加
   },
 })

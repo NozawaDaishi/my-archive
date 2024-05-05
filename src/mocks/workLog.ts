@@ -267,6 +267,84 @@ const mockWorkLog: WorkLog[] = [
       },
     ],
   },
+  {
+    work_day: '2024-04-21',
+    works: [
+      {
+        name: 'NWスペシャリスト',
+        content: '試験日',
+        start_time: '10:30',
+        end_time: '16:30',
+        time: '6時間0分',
+        message: '',
+      },
+    ],
+  },
+  {
+    work_day: '2024-04-22',
+    works: [],
+  },
+  {
+    work_day: '2024-04-23',
+    works: [],
+  },
+  {
+    work_day: '2024-04-24',
+    works: [],
+  },
+  {
+    work_day: '2024-04-25',
+    works: [],
+  },
+  {
+    work_day: '2024-04-26',
+    works: [],
+  },
+  {
+    work_day: '2024-04-27',
+    works: [],
+  },
+  {
+    work_day: '2024-04-28',
+    works: [],
+  },
+  {
+    work_day: '2024-04-29',
+    works: [],
+  },
+  {
+    work_day: '2024-04-30',
+    works: [],
+  },
+  {
+    work_day: '2024-05-01',
+    works: [],
+  },
+  {
+    work_day: '2024-05-02',
+    works: [],
+  },
+  {
+    work_day: '2024-05-03',
+    works: [],
+  },
+  {
+    work_day: '2024-05-04',
+    works: [],
+  },
+  {
+    work_day: '2024-05-05',
+    works: [
+      {
+        name: '達人に学ぶDB設計徹底指南書',
+        content: 'データベースを制する者はシステムを制す',
+        start_time: '14:00',
+        end_time: '15:00',
+        time: '1時間0分',
+        message: '',
+      },
+    ],
+  },
 ]
 
 export default mockWorkLog
