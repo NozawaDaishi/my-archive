@@ -7,7 +7,7 @@ interface UseLayoutComponentReturns {
   sortedBooks: ComputedRef<Book[]>
 }
 
-export default function useCalendarComponent(): UseLayoutComponentReturns {
+export default function useLayoutComponent(): UseLayoutComponentReturns {
   const bookStore = Stores.book()
   const { books } = storeToRefs(bookStore)
   const { getBooks } = bookStore

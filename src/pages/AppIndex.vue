@@ -15,6 +15,11 @@ const isActive = (path: string): boolean => {
   return route.path === path
 }
 
+const navigateToExternalSite = (): void => {
+  // window.location.href = 'https://nozawadaishi.github.io/private-my-archive/resume'
+  window.location.href = 'http://localhost:5174/private-my-archive/resume'
+}
+
 onMounted(() => {
   nextTick(() => {
     if (headerRef.value) {
@@ -30,17 +35,25 @@ onMounted(() => {
       <h1 :class="classes.title" @click.stop.prevent="navigateTo('/')">
         Archives of Daishi Nozawa
       </h1>
-      <nav :class="classes.nav">
-        <a
-          v-for="(link, index) in navLinks"
-          :key="index"
-          :class="[classes.link, isActive(link.path) ? classes.active : '']"
-          @click.stop.prevent="navigateTo(link.path)"
+      <div :class="classes.nav_wrapper">
+        <nav :class="classes.nav">
+          <a
+            v-for="(link, index) in navLinks"
+            :key="index"
+            :class="[classes.link, isActive(link.path) ? classes.active : '']"
+            @click.stop.prevent="navigateTo(link.path)"
+          >
+            {{ link.name }}
+          </a>
+          <div :class="classes.animation"></div>
+        </nav>
+        <div
+          :class="classes.lock_icon"
+          @click.prevent.stop="navigateToExternalSite()"
         >
-          {{ link.name }}
-        </a>
-        <div :class="classes.animation"></div>
-      </nav>
+          <img src="@/assets/lock.svg" />
+        </div>
+      </div>
     </header>
     <div
       :class="classes.body"
@@ -68,13 +81,12 @@ onMounted(() => {
           <span v-if="link.name === navLinks[2].name"
             ><img src="@/assets/hat.svg"
           /></span>
-          <span v-if="link.name === navLinks[3].name"
-            ><img src="@/assets/resume.svg"
-          /></span>
-          <span v-if="link.name === navLinks[4].name"
-            ><img src="@/assets/cv.svg"
-          /></span>
         </a>
+        <span
+          :class="classes.lock_icon"
+          @click.prevent.stop="navigateToExternalSite()"
+          ><img src="@/assets/lock.svg"
+        /></span>
       </nav>
     </footer>
   </div>
@@ -94,80 +106,101 @@ onMounted(() => {
       padding: 50px 0 30px 0;
       cursor: pointer;
     }
-    & .nav {
-      margin: 0 auto 30px;
+    & .nav_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
-      width: 500px;
-      height: 50px;
-      background-color: #34495e;
-      border-radius: 8px;
-      font-size: 0;
-      .animation {
-        position: absolute;
+      margin-bottom: 10px;
+      & .nav {
+        position: relative;
+        width: 300px;
+        height: 50px;
+        background-color: #34495e;
+        border-radius: 8px;
+        font-size: 0;
+        .animation {
+          position: absolute;
+          height: 100%;
+          top: 0;
+          z-index: 0;
+          transition: all 0.5s ease 0s;
+          border-radius: 8px;
+        }
+      }
+      a {
+        line-height: 50px;
         height: 100%;
-        top: 0;
-        z-index: 0;
-        transition: all 0.5s ease 0s;
-        border-radius: 8px;
-      }
-    }
-    a {
-      line-height: 50px;
-      height: 100%;
-      width: 100px;
-      font-size: 15px;
-      display: inline-block;
-      position: relative;
-      z-index: 1;
-      text-decoration: none;
-      text-transform: uppercase;
-      text-align: center;
-      color: white;
-      cursor: pointer;
-      &:nth-child(1):hover ~ .animation {
         width: 100px;
-        left: 0;
-        background-color: #1abc9c;
+        font-size: 15px;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        &:nth-child(1):hover ~ .animation {
+          width: 100px;
+          left: 0;
+          background-color: #1abc9c;
+        }
+        &:nth-child(2):hover ~ .animation {
+          width: 100px;
+          left: 100px;
+          background-color: #e74c3c;
+        }
+        &:nth-child(3):hover ~ .animation {
+          width: 100px;
+          left: 200px;
+          background-color: #3498db;
+        }
+        &:nth-child(4):hover ~ .animation {
+          width: 100px;
+          left: 300px;
+          background-color: #9b59b6;
+        }
+        &:nth-child(5):hover ~ .animation {
+          width: 100px;
+          left: 400px;
+          background-color: #e67e22;
+        }
+        &:nth-child(1).active {
+          background-color: #1abc9c;
+          border-radius: 8px;
+        }
+        &:nth-child(2).active {
+          background-color: #e74c3c;
+          border-radius: 8px;
+        }
+        &:nth-child(3).active {
+          background-color: #3498db;
+          border-radius: 8px;
+        }
+        &:nth-child(4).active {
+          background-color: #9b59b6;
+          border-radius: 8px;
+        }
+        &:nth-child(5).active {
+          background-color: #e67e22;
+          border-radius: 8px;
+        }
       }
-      &:nth-child(2):hover ~ .animation {
-        width: 100px;
-        left: 100px;
-        background-color: #e74c3c;
-      }
-      &:nth-child(3):hover ~ .animation {
-        width: 100px;
-        left: 200px;
-        background-color: #3498db;
-      }
-      &:nth-child(4):hover ~ .animation {
-        width: 100px;
-        left: 300px;
-        background-color: #9b59b6;
-      }
-      &:nth-child(5):hover ~ .animation {
-        width: 100px;
-        left: 400px;
-        background-color: #e67e22;
-      }
-      &:nth-child(1).active {
-        background-color: #1abc9c;
-        border-radius: 8px;
-      }
-      &:nth-child(2).active {
-        background-color: #e74c3c;
-        border-radius: 8px;
-      }
-      &:nth-child(3).active {
-        background-color: #3498db;
-        border-radius: 8px;
-      }
-      &:nth-child(4).active {
-        background-color: #9b59b6;
-        border-radius: 8px;
-      }
-      &:nth-child(5).active {
-        background-color: #e67e22;
-        border-radius: 8px;
+      .lock_icon {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 30px;
+        background-color: #34495e;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        img {
+          width: 25px;
+        }
       }
     }
   }
@@ -182,7 +215,7 @@ onMounted(() => {
 @media (max-width: 519px) {
   .wrapper {
     header {
-      & .nav {
+      & .nav_wrapper {
         display: none;
       }
     }
@@ -198,7 +231,7 @@ onMounted(() => {
       }
       a {
         line-height: 50px;
-        width: 20vw;
+        width: calc(100vw / 4);
         display: inline-block;
         z-index: 1;
         text-decoration: none;
@@ -225,6 +258,16 @@ onMounted(() => {
         &:nth-child(5).active {
           background-color: #e67e22;
           border-radius: 8px;
+        }
+      }
+      .lock_icon {
+        line-height: 50px;
+        width: calc(100vw / 4);
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        img {
+          width: 25px;
         }
       }
     }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useCalendarComponent from '@/components/layouts/home/Layout/useCalendarComponent'
+import useCalendar from '@/composables/useCalendar'
 
 const {
   blankDays,
@@ -21,7 +21,7 @@ const {
   totalWorkTimeForMonth,
   weekdays,
   workCountOnDay,
-} = useCalendarComponent()
+} = useCalendar()
 </script>
 
 <template>
@@ -277,4 +277,3 @@ const {
   }
 }
 </style>
-@/components/layouts/home/Layout/useCalendarComponent

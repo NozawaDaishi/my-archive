@@ -4,7 +4,7 @@ import { Stores } from '@/stores'
 import { storeToRefs } from 'pinia'
 import { WorkLog } from '@/types/calendar'
 
-interface UseCalendarComponentReturns {
+interface UseCalendarReturns {
   blankDays: ComputedRef<null[]>
   changeMonth: (step: number) => void
   currentMonth: Ref<number>
@@ -30,7 +30,7 @@ interface UseCalendarComponentReturns {
   workCountOnDay: (day: number) => number
 }
 
-export default function useCalendarComponent(): UseCalendarComponentReturns {
+export default function useCalendar(): UseCalendarReturns {
   const calendarStore = Stores.calendar()
   const {
     currentMonth,

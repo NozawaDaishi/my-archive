@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import useCalendarComponent from '@/components/layouts/home/Layout/useCalendarComponent'
+import useCalendar from '@/composables/useCalendar'
 
-const { focusedDate, focusedWork, weekdays } = useCalendarComponent()
+const { focusedDate, focusedWork, weekdays } = useCalendar()
 </script>
 
 <template>
