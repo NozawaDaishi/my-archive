@@ -3,12 +3,13 @@ import { computed, onMounted } from 'vue'
 import { calculateAge } from '@/utils/calculateAge'
 import { DATE_FORMAT_YEAR_MONTH_DAY } from '@/constants/dateFormats'
 import { formatDate } from '@/utils/formatDate'
+import { Services } from '@/services'
 import { Stores } from '@/stores'
 import { storeToRefs } from 'pinia'
 
 const resumeStore = Stores.resume()
 const { resumeData } = storeToRefs(resumeStore)
-const { getResumeData } = resumeStore
+const { setResumeData } = resumeStore
 
 const age = computed(() =>
   resumeData.value
@@ -17,7 +18,8 @@ const age = computed(() =>
 )
 
 onMounted(async () => {
-  await getResumeData()
+  const response = await Services.resume.fetchResumeData()
+  await setResumeData(response)
 })
 </script>
 
@@ -70,9 +72,6 @@ onMounted(async () => {
     font-weight: bold;
     margin-bottom: 10px;
   }
-  // img {
-  //   width: 300px;
-  // }
   .table {
     display: flex;
     align-items: center;
@@ -80,7 +79,7 @@ onMounted(async () => {
     color: #002747;
     & td {
       padding: 1em 1.5em;
-      min-width: 10em;
+      min-width: 11em;
     }
     & th {
       padding: 1em 0;

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import BasicInformationComponent from '@/components/parts/BasicInformation/BasicInformationComponent.vue'
-import CalendarComponent from '@/components/parts/Calendar/CalendarComponent.vue'
-import CurrentGoalsComponent from '@/components/parts/CurrentGoals/CurrentGoalsComponent.vue'
-import FocusedDateComponent from '@/components/parts/FocusedDate/FocusedDateComponent.vue'
-import QualificationComponent from '@/components/parts/Qualification/QualificationComponent.vue'
+import BasicInformationComponent from '@/pages/home/components/parts/BasicInformationComponent.vue'
+import CalendarComponent from '@/pages/home/components/parts/CalendarComponent.vue'
+import CurrentGoalsComponent from '@/pages/home/components/parts/CurrentGoalsComponent.vue'
+import FocusedDateComponent from '@/pages/home/components/parts/FocusedDateComponent.vue'
+import QualificationComponent from '@/pages/home/components/parts/QualificationComponent.vue'
 </script>
 
 <template>

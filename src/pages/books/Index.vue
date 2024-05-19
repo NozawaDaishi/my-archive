@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Books from '@/components/pages/books/PageComponent.vue'
+import Layout from '@/pages/books/components/layout/LayoutComponent.vue'
 </script>
 
 <template>
-  <Books />
+  <Layout />
 </template>

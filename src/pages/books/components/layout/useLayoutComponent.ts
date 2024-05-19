@@ -1,5 +1,6 @@
 import { Book, Status } from '@/types/book'
 import { computed, ComputedRef, onMounted } from 'vue'
+import { Services } from '@/services'
 import { Stores } from '@/stores'
 import { storeToRefs } from 'pinia'
 
@@ -10,10 +11,11 @@ interface UseLayoutComponentReturns {
 export default function useLayoutComponent(): UseLayoutComponentReturns {
   const bookStore = Stores.book()
   const { books } = storeToRefs(bookStore)
-  const { getBooks } = bookStore
+  const { setBooks } = bookStore
 
   onMounted(async () => {
-    await getBooks()
+    const response = await Services.book.fetchBooks()
+    setBooks(response)
   })
 
   // computedを使ってbooksをソートされた順にする

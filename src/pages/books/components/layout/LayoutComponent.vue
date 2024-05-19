@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Status } from '@/types/book'
-import useLayoutComponent from '@/components/layouts/books/Layout/useLayoutComponent'
+import useLayoutComponent from '@/pages/books/components/layout/useLayoutComponent'
 
 const { sortedBooks } = useLayoutComponent()
 </script>
@@ -121,3 +121,4 @@ const { sortedBooks } = useLayoutComponent()
   }
 }
 </style>
+@/pages/books/components/layout/useLayoutComponent

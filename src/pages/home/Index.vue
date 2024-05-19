@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Home from '@/components/pages/home/PageComponent.vue'
+import Layout from '@/pages/home/components/layout/LayoutComponent.vue'
 </script>
 
 <template>
-  <Home />
+  <Layout />
 </template>
 
 <style lang="scss" module="classes"></style>
