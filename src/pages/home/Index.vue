@@ -5,3 +5,5 @@ import Home from '@/components/pages/home/PageComponent.vue'
 <template>
   <Home />
 </template>
+
+<style lang="scss" module="classes"></style>

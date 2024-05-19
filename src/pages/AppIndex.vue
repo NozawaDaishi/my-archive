@@ -15,11 +15,6 @@ const isActive = (path: string): boolean => {
   return route.path === path
 }
 
-const navigateToExternalSite = (): void => {
-  // window.location.href = 'https://nozawadaishi.github.io/private-my-archive/resume'
-  window.location.href = 'http://localhost:5174/private-my-archive/resume'
-}
-
 onMounted(() => {
   nextTick(() => {
     if (headerRef.value) {
@@ -47,12 +42,6 @@ onMounted(() => {
           </a>
           <div :class="classes.animation"></div>
         </nav>
-        <div
-          :class="classes.lock_icon"
-          @click.prevent.stop="navigateToExternalSite()"
-        >
-          <img src="@/assets/lock.svg" />
-        </div>
       </div>
     </header>
     <div
@@ -81,12 +70,13 @@ onMounted(() => {
           <span v-if="link.name === navLinks[2].name"
             ><img src="@/assets/hat.svg"
           /></span>
+          <span v-if="link.name === navLinks[3].name"
+            ><img src="@/assets/resume.svg"
+          /></span>
+          <span v-if="link.name === navLinks[4].name"
+            ><img src="@/assets/cv.svg"
+          /></span>
         </a>
-        <span
-          :class="classes.lock_icon"
-          @click.prevent.stop="navigateToExternalSite()"
-          ><img src="@/assets/lock.svg"
-        /></span>
       </nav>
     </footer>
   </div>
@@ -114,7 +104,7 @@ onMounted(() => {
       margin-bottom: 10px;
       & .nav {
         position: relative;
-        width: 300px;
+        width: 500px;
         height: 50px;
         background-color: #34495e;
         border-radius: 8px;
@@ -187,21 +177,6 @@ onMounted(() => {
           border-radius: 8px;
         }
       }
-      .lock_icon {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        right: 30px;
-        background-color: #34495e;
-        border-radius: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        img {
-          width: 25px;
-        }
-      }
     }
   }
   .body {
@@ -231,7 +206,7 @@ onMounted(() => {
       }
       a {
         line-height: 50px;
-        width: calc(100vw / 4);
+        width: calc(100vw / 5);
         display: inline-block;
         z-index: 1;
         text-decoration: none;
@@ -258,16 +233,6 @@ onMounted(() => {
         &:nth-child(5).active {
           background-color: #e67e22;
           border-radius: 8px;
-        }
-      }
-      .lock_icon {
-        line-height: 50px;
-        width: calc(100vw / 4);
-        display: inline-block;
-        text-align: center;
-        cursor: pointer;
-        img {
-          width: 25px;
         }
       }
     }
